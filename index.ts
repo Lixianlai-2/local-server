@@ -3,6 +3,12 @@ import axios from "axios";
 // 这里的Express是类型
 const app: Express = express();
 
+// 开启跨域权限
+app.use("*", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 const router: Router = express.Router();
 
 app.use("/api", router);
