@@ -17,7 +17,7 @@ router.get("/list", async (req: Request, res: Response) => {
   const result = await axios.post(
     "https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=localCityNCOVDataList,diseaseh5Shelf"
   );
-  res.json({ data: result.data });
+  res.json({ ...result.data.data });
 });
 
 app.listen(3333, () => {
